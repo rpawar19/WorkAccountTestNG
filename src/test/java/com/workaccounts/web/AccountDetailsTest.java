@@ -12,7 +12,7 @@ public class AccountDetailsTest extends WorkAccountsBase {
 	@Test
 	public void updateProfilePicture() {
 		Assert.assertEquals(ad.addUpdateProfilePicture(), true);
-		System.out.println("Test Passed");
+		System.out.println("Test Passed1");
 
 	}
 
