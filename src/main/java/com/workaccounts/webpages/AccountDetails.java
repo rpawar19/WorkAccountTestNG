@@ -11,7 +11,7 @@ import com.workaccounts.webobjects.AccountDetailsWO;
 
 public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO {
 	
-	public void addUpdateProfilePicture() {
+	public boolean addUpdateProfilePicture() {
 		//getWebElement(accountDetailsTab).click();
 		getWebElement(updateProfilePicute).click();
 		try {
@@ -27,13 +27,13 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			robot.setAutoDelay(2000);
-		
+			getWebElement(saveButton).click();
 		
 		} catch (AWTException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		getWebElement(saveButton).click();
+		return true;
 
 	}
 

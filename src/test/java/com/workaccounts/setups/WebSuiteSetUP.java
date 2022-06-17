@@ -20,7 +20,7 @@ public class WebSuiteSetUP extends WorkAccountsBase {
 
 	@AfterSuite(alwaysRun = true)
 	public void tearDown() {
-		//quitBrowser();
+		quitBrowser();
 	}
 
 }
