@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke_Tests">
+	<parameter name="admin_email" value="rpawar+wa1@may16.wptst.com" />
+	<parameter name="nonadmin_email" value="rpawar+wa2@may16.wptst.com" />
+	<parameter name="password" value="lsspl#123" />
+	
+
+	<test name="SmokeTest">
+	
+	<groups>
+            <run>
+              <exclude name = "Admin"></exclude>
+              <include name = "NonAdmin"></include>
+            </run>
+        </groups>
+        
+	<classes>
+			<class name="com.workaccounts.setups.WebSuiteSetUP" />
+			<class name="com.workaccounts.web.LoginTest" />
+		</classes>
+
+	</test> 
+</suite>
