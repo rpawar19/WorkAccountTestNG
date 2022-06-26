@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Smoke_Tests]" guice-stage="DEVELOPMENT">
-  <parameter name="password" value="lsspl#123"/>
-  <parameter name="nonadmin_email" value="rpawar+wa2@may16.wptst.com"/>
-  <parameter name="admin_email" value="rpawar+wa1@may16.wptst.com"/>
+  <listeners>
+    <listener class-name="com.workaccounts.listener.listernersITest"/>
+  </listeners>
   <test thread-count="5" name="SmokeTest(failed)">
     <groups>
       <run>
@@ -12,11 +12,19 @@
       </run>
     </groups>
     <classes>
-      <class name="com.workaccounts.web.LoginTest">
+      <class name="com.workaccounts.web.AccountDetailsTest">
         <methods>
-          <include name="loginWithNonAdminUser" invocation-numbers="0"/>
+          <include name="updateLocation"/>
+          <include name="deleteLocation"/>
+          <include name="deletePhoneNumber"/>
+          <include name="updateDepartment"/>
+          <include name="addDepartment"/>
+          <include name="updateName"/>
+          <include name="addLocation"/>
+          <include name="deleteDepartment"/>
+          <include name="updatePhoneNumber"/>
         </methods>
-      </class> <!-- com.workaccounts.web.LoginTest -->
+      </class> <!-- com.workaccounts.web.AccountDetailsTest -->
     </classes>
   </test> <!-- SmokeTest(failed) -->
 </suite> <!-- Failed suite [Smoke_Tests] -->

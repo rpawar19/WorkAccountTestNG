@@ -2,24 +2,26 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Smoke_Tests">
-	<parameter name="admin_email" value="rpawar+wa1@may16.wptst.com" />
-	<parameter name="nonadmin_email" value="rpawar+wa2@may16.wptst.com" />
-	<parameter name="password" value="lsspl#123" />
-	
+<listeners>
+	<listener class-name="com.workaccounts.listener.listernersITest">
+	</listener>
+</listeners>
+
 
 	<test name="SmokeTest">
-	
-	<groups>
-            <run>
-              <exclude name = "Admin"></exclude>
-              <include name = "NonAdmin"></include>
-            </run>
-        </groups>
-        
-	<classes>
-			<class name="com.workaccounts.setups.WebSuiteSetUP" />
+
+		<groups>
+			<run>
+				<exclude name="Admin"></exclude>
+				<include name="NonAdmin"></include>
+			</run>
+		</groups>
+
+		<classes>
 			<class name="com.workaccounts.web.LoginTest" />
+			<class name="com.workaccounts.web.AccountDetailsTest" />
+			<!-- <class name="com.workaccounts.web.ChangePasswordTest" />  -->
 		</classes>
 
-	</test> 
+	</test>
 </suite>

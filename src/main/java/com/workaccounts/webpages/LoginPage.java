@@ -22,5 +22,12 @@ public class LoginPage extends WorkAccountsBase implements LoginPageWO {
 		return true;
 		
 	}
+	
+	public void verifyAdminPortalLoad() {
+		
+	}
+	public void verifynonAdminPortalLoad() {
+		
+	}
 
 }

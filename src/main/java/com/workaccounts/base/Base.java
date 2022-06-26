@@ -1,5 +1,7 @@
 package com.workaccounts.base;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -12,8 +14,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.workaccounts.utilities.ExcelUtils;
+import com.workaccounts.utilities.Waits;
 import com.workaccounts.webpages.AccountDetails;
+import com.workaccounts.webpages.ChangePassword;
 import com.workaccounts.webpages.LoginPage;
+import com.workaccounts.webpages.PreferencesPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -21,9 +28,14 @@ public class Base {
 	public static WebDriver webdriver;
 	public static String configPath = "./resources/config.properties";
 	public static Logger accountDetailsLoger = LogManager.getLogger(AccountDetails.class);
-
+	public String projectPath = System.getProperty("user.dir");
 	public static LoginPage loginPage;
+	public static ChangePassword changepwd;
+	public static PreferencesPage preferences;
 
+	public static Waits wait;
+	public static ExcelUtils excelUtils;
+	public Logger logger = LogManager.getLogger(this.getClass());
 
 	public void initWebDriver() {
 
@@ -44,6 +56,10 @@ public class Base {
 
 	private void initObjects() {
 		loginPage = new LoginPage();
+		wait = new Waits();
+		excelUtils = new ExcelUtils();
+		changepwd = new ChangePassword();
+		preferences = new PreferencesPage();
 	}
 
 	public void quitBrowser() {
@@ -52,8 +68,9 @@ public class Base {
 
 	public WebElement getWebElement(By by) {
 		return webdriver.findElement(by);
-		
+
 	}
+	
 
 	public String getConfigValue(String key) {
 		return getValue(configPath, key);
@@ -73,4 +90,7 @@ public class Base {
 
 		return p.getProperty(key);
 	}
+
+	
+
 }
