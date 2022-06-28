@@ -1,4 +1,4 @@
-Method loginWithNonAdminUseris started
-Method loginWithNonAdminUseris Passed
-Method updateProfileis started
-Method updateProfileis Failed
+2022-06-28 18:50:53,177 INFO c.w.l.listernersITest [main] Method loginWithNonAdminUseris started
+2022-06-28 18:51:09,914 INFO c.w.l.listernersITest [main] Method loginWithNonAdminUseris Failed
+2022-06-28 18:51:10,000 INFO c.w.l.listernersITest [main] Method updateProfileis started
+2022-06-28 18:51:40,179 INFO c.w.l.listernersITest [main] Method updateProfileis Failed
