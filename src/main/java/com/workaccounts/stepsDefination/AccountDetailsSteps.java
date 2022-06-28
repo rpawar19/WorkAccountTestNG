@@ -7,21 +7,20 @@ public class AccountDetailsSteps extends WorkAccountsBase{
 	AccountDetails ad = new AccountDetails();
 
 	public void validateUpdateProfile() {
-//		ad.addUpdateProfilePicture();
+		//ad.addUpdateProfilePicture();
 		ad.updateName();
+		ad.addDepartment();
 		ad.updateDepartment();
 		ad.deleteDepartment();
-		ad.addDepartment();
+		ad.addPosition();
 		ad.updatePosition();
 		ad.deletePosition();
-		ad.addPosition();
+		ad.addLocation();
 		ad.updateLocation();
 		ad.deleteLocation();
-		ad.addLocation();
+		ad.addPhoneNumber();
 		ad.updatePhoneNumber();
 		ad.deletePhoneNumber();
-		ad.addPhoneNumber();
-		
 	}
 
 }

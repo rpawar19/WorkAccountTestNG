@@ -6,8 +6,6 @@
 	<listener class-name="com.workaccounts.listener.listernersITest">
 	</listener>
 </listeners>
-
-
 	<test name="SmokeTest">
 
 		<!-- <groups>

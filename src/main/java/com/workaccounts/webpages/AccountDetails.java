@@ -104,6 +104,7 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 		getWebElement(editPositionButton).click();
 		waitForElement(editPositionOrTitleInputbox,30);
 		getWebElement(editPositionOrTitleInputbox).click();
+		waitForElement(deletePositionbutton,10);
 		getWebElement(deletePositionbutton).click();
 		waitForElement(editPositionOrTitleInputbox,30);
 		getWebElement(editPositionOrTitleInputbox).sendKeys(getConfigValue("updatePosition"));
@@ -137,18 +138,15 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 		getWebElement(deleteLocationbutton).click();
 		getWebElement(editLocationInputbox).sendKeys(getConfigValue("updateLocation"));
 		clickOnSavebutton(locationSavebutton2);
-		System.out.println("Update Location Performed");
 
 	}
 	public void deleteLocation() {
-		System.out.println("deleteLocation started");
 		waitForElement(editLocationbutton,30);
 		getWebElement(editLocationbutton).click();
 		waitForElement(editLocationInputbox,30);
 		getWebElement(editLocationInputbox).click();
 		waitForElement(deleteLocationbutton,30);
 		getWebElement(deleteLocationbutton).click();
-	//	getWebElement(locationSavebutton2).click();
 		clickOnSavebutton(locationSavebutton2);
 
 	}
@@ -169,8 +167,8 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 		waitForElement(numberEditbutton,30);
 		scrollPage();
 		getWebElement(numberEditbutton).click();
-		wait.waitFor2Sec();
-		getWebElement(countryCode).click();
+		waitForElement(numberInput,30);
+		getWebElement(numberInput).click();
 //		List<WebElement> allOptions = webdriver.findElements(By.xpath("//div[@role='option']"));
 //		allOptions.get(94).click();
 		getWebElement(numberInput).click();
@@ -193,8 +191,6 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 	
 	public void clickOnSavebutton(By elementName) {
 		waitForElement(elementName,30);
-//		wait.waitFor3Sec();	
-
 		WebElement button = getWebElement(elementName);
 		JavascriptExecutor jse = (JavascriptExecutor)webdriver;
 		jse.executeScript("arguments[0].click()", button);
