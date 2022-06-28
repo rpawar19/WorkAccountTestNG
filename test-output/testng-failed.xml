@@ -5,24 +5,10 @@
     <listener class-name="com.workaccounts.listener.listernersITest"/>
   </listeners>
   <test thread-count="5" name="SmokeTest(failed)">
-    <groups>
-      <run>
-        <include name="NonAdmin"/>
-        <exclude name="Admin"/>
-      </run>
-    </groups>
     <classes>
       <class name="com.workaccounts.web.AccountDetailsTest">
         <methods>
-          <include name="updateLocation"/>
-          <include name="deleteLocation"/>
-          <include name="deletePhoneNumber"/>
-          <include name="updateDepartment"/>
-          <include name="addDepartment"/>
-          <include name="updateName"/>
-          <include name="addLocation"/>
-          <include name="deleteDepartment"/>
-          <include name="updatePhoneNumber"/>
+          <include name="updateProfile"/>
         </methods>
       </class> <!-- com.workaccounts.web.AccountDetailsTest -->
     </classes>

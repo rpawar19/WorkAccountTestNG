@@ -1,9 +1,12 @@
 package com.workaccounts.base;
 
 import java.io.FileInputStream;
+import java.util.concurrent.TimeUnit;
+
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
@@ -14,6 +17,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.workaccounts.utilities.ExcelUtils;
 import com.workaccounts.utilities.Waits;
@@ -90,7 +95,10 @@ public class Base {
 
 		return p.getProperty(key);
 	}
-
 	
+	public static void waitForElement(By by, int timeOut) {
+		WebDriverWait wait = new WebDriverWait(webdriver, Duration.ofSeconds(timeOut));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	}
 
 }

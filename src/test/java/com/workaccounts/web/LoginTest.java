@@ -19,12 +19,12 @@ public class LoginTest extends WorkAccountsBase {
 //	}
 	
 
-		@Test (groups = { "Admin" })
-	public void loginWithAdminUser() {
-		webdriver.get(getConfigValue("url"));
-		webdriver.manage().window().maximize();
-		Assert.assertEquals(loginPage.loginIntoWorkAccoutns(getConfigValue("admin_username"), getConfigValue("admin_password")), true);
-	}	
+//		@Test (groups = { "Admin" })
+//	public void loginWithAdminUser() {
+//		webdriver.get(getConfigValue("url"));
+//		webdriver.manage().window().maximize();
+//		Assert.assertEquals(loginPage.loginIntoWorkAccoutns(getConfigValue("admin_username"), getConfigValue("admin_password")), true);
+//	}	
 	
 	
 	
@@ -44,7 +44,7 @@ public class LoginTest extends WorkAccountsBase {
 //	}
 	
 	
-	@Test  (groups = { "NonAdmin" })
+	@Test  
 	public void loginWithNonAdminUser() {
 		webdriver.get(getConfigValue("url"));
 		webdriver.manage().window().maximize();

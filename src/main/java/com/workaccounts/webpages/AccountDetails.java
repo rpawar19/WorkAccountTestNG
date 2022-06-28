@@ -44,11 +44,10 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 	}
 
 	public void updateName() {
+		waitForElement(editNamebutton,30);
 		getWebElement(editNamebutton).click();
-		wait.waitFor2Sec();
+		waitForElement(nameInputbox,30);
 		String oldName = getWebElement(nameInputbox).getAttribute("value");
-		logger.info("Old Name is : " +oldName);
-		
 		getWebElement(nameInputbox).click();
 		getWebElement(deleteNamebutton).click();
 		if(oldName.equals(getConfigValue("Name2"))) {
@@ -58,24 +57,23 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 
 		}
 		clickOnSavebutton(nameSavebtn);
-		
-
 	}
 
 	public void addDepartment() {
+		waitForElement(addDepartmentlinkbutton,30);
 		getWebElement(addDepartmentlinkbutton).click();
-		wait.waitFor2Sec();
+		waitForElement(departmentInputbox,30);
 		getWebElement(departmentInputbox).sendKeys(getConfigValue("newDepartment"));
-		wait.waitFor1Sec();	
 		clickOnSavebutton(departmentSavebtn);
 
 	}
 
 	public void updateDepartment() {
+		waitForElement(editDepartmentbutton,30);
 		getWebElement(editDepartmentbutton).click();
-		wait.waitFor1Sec();
+		waitForElement(editDepartmentInputbox,30);
 		getWebElement(editDepartmentInputbox).click();
-		wait.waitFor2Sec();
+		waitForElement(deleteDepartmentbutton,30);
 		getWebElement(deleteDepartmentbutton).click();
 		getWebElement(editDepartmentInputbox).sendKeys(getConfigValue("updateDepartment"));
 		clickOnSavebutton(departmentSavebtn2);
@@ -83,37 +81,40 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 	}
 
 	public void deleteDepartment() {
+		waitForElement(editDepartmentbutton,30);
 		getWebElement(editDepartmentbutton).click();
-		wait.waitFor2Sec();
+		waitForElement(editDepartmentInputbox,30);
 		getWebElement(editDepartmentInputbox).click();
-		wait.waitFor1Sec();
+		waitForElement(deleteDepartmentbutton,30);
 		getWebElement(deleteDepartmentbutton).click();
 		clickOnSavebutton(departmentSavebtn2);
 
 	}
 
 	public void addPosition() {
+		waitForElement(addPositionOrTitlebutton,30);
 		getWebElement(addPositionOrTitlebutton).click();
-		wait.waitFor2Sec();
+		waitForElement(addPositionOrTitleInputbox,30);
 		getWebElement(addPositionOrTitleInputbox).sendKeys(getConfigValue("newPosition"));
-		wait.waitFor2Sec();		
 		clickOnSavebutton(positionSavebutton);
 	}
 
 	public void updatePosition() {
+		waitForElement(editPositionButton,30);
 		getWebElement(editPositionButton).click();
-		wait.waitFor2Sec();
+		waitForElement(editPositionOrTitleInputbox,30);
 		getWebElement(editPositionOrTitleInputbox).click();
 		getWebElement(deletePositionbutton).click();
+		waitForElement(editPositionOrTitleInputbox,30);
 		getWebElement(editPositionOrTitleInputbox).sendKeys(getConfigValue("updatePosition"));
-		wait.waitFor2Sec();
 		clickOnSavebutton(positionSavebutton2);
 
 	}
 
 	public void deletePosition() {
+		waitForElement(editPositionButton,30);
 		getWebElement(editPositionButton).click();
-		wait.waitFor2Sec();
+		waitForElement(editPositionOrTitleInputbox,30);
 		getWebElement(editPositionOrTitleInputbox).click();
 		getWebElement(deletePositionbutton).click();
 		clickOnSavebutton(positionSavebutton2);
@@ -121,45 +122,51 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 	}
 	
 	public void addLocation() {
+		waitForElement(addLocationbutton,30);
 		getWebElement(addLocationbutton).click();
-		wait.waitFor2Sec();
+		waitForElement(addLocationInputbox,30);
 		getWebElement(addLocationInputbox).sendKeys(getConfigValue("newLocation"));
-		wait.waitFor2Sec();	
 		clickOnSavebutton(locationSavebutton);
 	}
 	public void updateLocation() {
+		
+		waitForElement(editLocationbutton,30);
 		getWebElement(editLocationbutton).click();
-		wait.waitFor2Sec();
+		waitForElement(editLocationInputbox,30);
 		getWebElement(editLocationInputbox).click();
 		getWebElement(deleteLocationbutton).click();
 		getWebElement(editLocationInputbox).sendKeys(getConfigValue("updateLocation"));
-		wait.waitFor2Sec();
 		clickOnSavebutton(locationSavebutton2);
+		System.out.println("Update Location Performed");
 
 	}
 	public void deleteLocation() {
+		System.out.println("deleteLocation started");
+		waitForElement(editLocationbutton,30);
 		getWebElement(editLocationbutton).click();
-		wait.waitFor2Sec();
+		waitForElement(editLocationInputbox,30);
 		getWebElement(editLocationInputbox).click();
+		waitForElement(deleteLocationbutton,30);
 		getWebElement(deleteLocationbutton).click();
-		wait.waitFor2Sec();
+	//	getWebElement(locationSavebutton2).click();
 		clickOnSavebutton(locationSavebutton2);
 
 	}
 	
 	public void addPhoneNumber() {
-		wait.waitFor2Sec();
+		waitForElement(addPhoneNumber,30);
 		getWebElement(addPhoneNumber).click();
-		wait.waitFor2Sec();
+		waitForElement(countryCode,30);
 		getWebElement(countryCode).click();
 		List<WebElement> allOptions = webdriver.findElements(By.xpath("//div[@role='option']"));
 		allOptions.get(94).click();
 		getWebElement(numberInput).sendKeys(getConfigValue("newPhoneNumber"));
+		waitForElement(numberSavebtn,30);
 		clickOnSavebutton(numberSavebtn);
 	
 	}
 	public void updatePhoneNumber() {
-		wait.waitFor2Sec();
+		waitForElement(numberEditbutton,30);
 		scrollPage();
 		getWebElement(numberEditbutton).click();
 		wait.waitFor2Sec();
@@ -167,27 +174,31 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 //		List<WebElement> allOptions = webdriver.findElements(By.xpath("//div[@role='option']"));
 //		allOptions.get(94).click();
 		getWebElement(numberInput).click();
-		wait.waitFor1Sec();
+		waitForElement(deletenumberbutton,30);
 		getWebElement(deletenumberbutton).click();
 		getWebElement(numberInput).sendKeys(getConfigValue("updatePhoneNumber"));
+
 		clickOnSavebutton(numberSavebtn);
 	
 	}
 	public void deletePhoneNumber() {
-		wait.waitFor2Sec();
+		waitForElement(numberEditbutton,30);
 		scrollPage();
 		getWebElement(numberEditbutton).click();
-		wait.waitFor2Sec();
+		waitForElement(numberDelete,30);
 		getWebElement(numberDelete).click();
-		wait.waitFor2Sec();
+		waitForElement(numberSavebtn2,30);
 		clickOnSavebutton(numberSavebtn2);
 	}
 	
 	public void clickOnSavebutton(By elementName) {
+		waitForElement(elementName,30);
+//		wait.waitFor3Sec();	
+
 		WebElement button = getWebElement(elementName);
 		JavascriptExecutor jse = (JavascriptExecutor)webdriver;
 		jse.executeScript("arguments[0].click()", button);
-		wait.waitFor3Sec();	
+
 		
 	}
 	

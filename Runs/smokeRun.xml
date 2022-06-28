@@ -10,12 +10,12 @@
 
 	<test name="SmokeTest">
 
-		<groups>
+		<!-- <groups>
 			<run>
 				<exclude name="Admin"></exclude>
 				<include name="NonAdmin"></include>
 			</run>
-		</groups>
+		</groups> -->
 
 		<classes>
 			<class name="com.workaccounts.web.LoginTest" />

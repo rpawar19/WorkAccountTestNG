@@ -7,11 +7,11 @@
   <Appenders>
   
   <RollingFile name="file" fileName="${filename}/executionFile.log" filePattern="${filename}/executionResult-%d{HH-mm-ss.SSS}.log">
-  <PatternLayout>
+   <PatternLayout>
   	<pattern>
   		%d %p %c{1.} [%t] %m%n
   	</pattern>
-  	  </PatternLayout>
+  	  </PatternLayout> 
   	
   	<SizeBasedTriggeringPolicy size="100 KB" />
   	
