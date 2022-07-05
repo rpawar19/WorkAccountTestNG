@@ -15,11 +15,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.v100.domdebugger.model.EventListener;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.workaccounts.listener.driverListener;
 import com.workaccounts.utilities.ExcelUtils;
 import com.workaccounts.utilities.Waits;
 import com.workaccounts.webpages.AccountDetails;
@@ -29,7 +32,7 @@ import com.workaccounts.webpages.PreferencesPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Base {
+public class Base extends driverListener{
 	public static WebDriver webdriver;
 	public static String configPath = "./resources/config.properties";
 	public static Logger accountDetailsLoger = LogManager.getLogger(AccountDetails.class);
@@ -37,11 +40,12 @@ public class Base {
 	public static LoginPage loginPage;
 	public static ChangePassword changepwd;
 	public static PreferencesPage preferences;
-
 	public static Waits wait;
 	public static ExcelUtils excelUtils;
 	public Logger logger = LogManager.getLogger(this.getClass());
-
+	public static driverListener eCapture = new driverListener();
+	public static EventFiringWebDriver eventRecorder;
+	
 	public void initWebDriver() {
 
 		initObjects();
@@ -56,15 +60,20 @@ public class Base {
 			WebDriverManager.edgedriver().setup();
 			webdriver = new EdgeDriver();
 		}
+		 
+		eventRecorder = new EventFiringWebDriver(webdriver); 
+		eventRecorder.register(eCapture);
 
 	}
 
-	private void initObjects() {
+	public void initObjects() {
 		loginPage = new LoginPage();
 		wait = new Waits();
 		excelUtils = new ExcelUtils();
 		changepwd = new ChangePassword();
 		preferences = new PreferencesPage();
+		
+
 	}
 
 	public void quitBrowser() {

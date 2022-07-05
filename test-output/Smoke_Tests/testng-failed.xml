@@ -6,11 +6,6 @@
   </listeners>
   <test thread-count="5" name="SmokeTest(failed)">
     <classes>
-      <class name="com.workaccounts.web.LoginTest">
-        <methods>
-          <include name="loginWithNonAdminUser"/>
-        </methods>
-      </class> <!-- com.workaccounts.web.LoginTest -->
       <class name="com.workaccounts.web.AccountDetailsTest">
         <methods>
           <include name="updateProfile"/>

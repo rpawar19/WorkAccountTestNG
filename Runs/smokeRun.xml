@@ -16,9 +16,12 @@
 		</groups> -->
 
 		<classes>
+			<class name="com.workaccounts.web.PracticeTest" />
+			<!-- 
 			<class name="com.workaccounts.web.LoginTest" />
 			<class name="com.workaccounts.web.AccountDetailsTest" />
-			<!-- <class name="com.workaccounts.web.ChangePasswordTest" />  -->
+			<class name="com.workaccounts.web.ChangePasswordTest" />
+			-->
 		</classes>
 
 	</test>
