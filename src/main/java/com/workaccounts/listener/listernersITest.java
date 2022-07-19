@@ -19,6 +19,7 @@ public class listernersITest extends WorkAccountsBase implements ITestListener, 
 	}
 
 	public void onTestStart(ITestResult result) {
+		
 		logger.info("Method " + result.getName() + "is started");
 	}
 	

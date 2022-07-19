@@ -5,10 +5,12 @@
     <listener class-name="com.workaccounts.listener.listernersITest"/>
   </listeners>
   <test thread-count="5" name="SmokeTest(failed)">
+    <parameter name="name2" value="UserB"/>
+    <parameter name="name1" value="UserA"/>
     <classes>
       <class name="com.workaccounts.web.AccountDetailsTest">
         <methods>
-          <include name="updateProfile"/>
+          <include name="updateProfile" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.workaccounts.web.AccountDetailsTest -->
     </classes>

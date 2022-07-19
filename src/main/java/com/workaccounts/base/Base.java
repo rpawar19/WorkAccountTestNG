@@ -32,7 +32,7 @@ import com.workaccounts.webpages.PreferencesPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Base extends driverListener{
+public class Base extends driverListener {
 	public static WebDriver webdriver;
 	public static String configPath = "./resources/config.properties";
 	public static Logger accountDetailsLoger = LogManager.getLogger(AccountDetails.class);
@@ -45,7 +45,7 @@ public class Base extends driverListener{
 	public Logger logger = LogManager.getLogger(this.getClass());
 	public static driverListener eCapture = new driverListener();
 	public static EventFiringWebDriver eventRecorder;
-	
+
 	public void initWebDriver() {
 
 		initObjects();
@@ -60,8 +60,8 @@ public class Base extends driverListener{
 			WebDriverManager.edgedriver().setup();
 			webdriver = new EdgeDriver();
 		}
-		 
-		eventRecorder = new EventFiringWebDriver(webdriver); 
+
+		eventRecorder = new EventFiringWebDriver(webdriver);
 		eventRecorder.register(eCapture);
 
 	}
@@ -72,19 +72,17 @@ public class Base extends driverListener{
 		excelUtils = new ExcelUtils();
 		changepwd = new ChangePassword();
 		preferences = new PreferencesPage();
-		
 
 	}
 
 	public void quitBrowser() {
-		webdriver.quit();
+		eventRecorder.quit();
 	}
 
 	public WebElement getWebElement(By by) {
-		return webdriver.findElement(by);
+		return eventRecorder.findElement(by);
 
 	}
-	
 
 	public String getConfigValue(String key) {
 		return getValue(configPath, key);
@@ -104,7 +102,7 @@ public class Base extends driverListener{
 
 		return p.getProperty(key);
 	}
-	
+
 	public static void waitForElement(By by, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(webdriver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));

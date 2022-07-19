@@ -7,32 +7,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
 public class driverListener implements WebDriverEventListener{
+	
+	
 
-	@Override
-	public void beforeAlertAccept(WebDriver driver) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void afterAlertAccept(WebDriver driver) {
-		// TODO Auto-generated method stub
-		System.out.println("After Alert Accept "+driver.toString() );
-	}
-
-	@Override
-	public void afterAlertDismiss(WebDriver driver) {
-		// TODO Auto-generated method stub
-		System.out.println("After Alert Dismiss "+driver.toString() );
-
-	}
-
-	@Override
-	public void beforeAlertDismiss(WebDriver driver) {
-		// TODO Auto-generated method stub
-		System.out.println("Before Alert Dismiss "+driver.toString() );
-
-	}
+//	@Override
+//	public void beforeAlertAccept(WebDriver driver) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void afterAlertAccept(WebDriver driver) {
+//		// TODO Auto-generated method stub
+//		System.out.println("After Alert Accept "+driver.toString() );
+//	}
+//
+//	@Override
+//	public void afterAlertDismiss(WebDriver driver) {
+//		// TODO Auto-generated method stub
+//		System.out.println("After Alert Dismiss "+driver.toString() );
+//
+//	}
+//
+//	@Override
+//	public void beforeAlertDismiss(WebDriver driver) {
+//		// TODO Auto-generated method stub
+//		System.out.println("Before Alert Dismiss "+driver.toString() );
+//
+//	}
 
 	@Override
 	public void beforeNavigateTo(String url, WebDriver driver) {
@@ -93,40 +95,40 @@ public class driverListener implements WebDriverEventListener{
 	@Override
 	public void beforeFindBy(By by, WebElement element, WebDriver driver) {
 		// TODO Auto-generated method stub
-		System.out.println("beforeFindBy "+by );
+		System.out.println("Finding Element : "+by );
 
 	}
 
 	@Override
 	public void afterFindBy(By by, WebElement element, WebDriver driver) {
 		// TODO Auto-generated method stub
-		System.out.println("afterFindBy");
+		System.out.println("Element Found Successfully");
 
 	}
 
 	@Override
 	public void beforeClickOn(WebElement element, WebDriver driver) {
 		// TODO Auto-generated method stub
-		System.out.println("Before Click on"+element);
+		System.out.println("Going to click on : "+element);
 
 	}
 
 	@Override
 	public void afterClickOn(WebElement element, WebDriver driver) {
 		// TODO Auto-generated method stub
-		System.out.println("afterClickOn"+element);
+		System.out.println("Clicked on "+element);
 	}
 
 	@Override
 	public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
 		// TODO Auto-generated method stub
-		System.out.println("beforeChangeValueOf"+element);
+		System.out.println("Going to Add some value in : "+element);
 	}
 
 	@Override
 	public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
 		// TODO Auto-generated method stub
-		System.out.println("afterChangeValueOf"+element);
+		System.out.println("Added some value in : "+element);
 
 	}
 

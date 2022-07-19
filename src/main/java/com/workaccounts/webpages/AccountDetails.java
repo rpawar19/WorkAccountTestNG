@@ -1,4 +1,4 @@
-	package com.workaccounts.webpages;
+package com.workaccounts.webpages;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -43,166 +43,200 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 
 	}
 
-	public void updateName() {
-		waitForElement(editNamebutton,30);
+	public void clickOnEditNameButton() {
+		waitForElement(editNamebutton, 30);
 		getWebElement(editNamebutton).click();
-		waitForElement(nameInputbox,30);
+	}
+
+	public void enterName(String name1, String name2) {
+		waitForElement(nameInputbox, 30);
 		String oldName = getWebElement(nameInputbox).getAttribute("value");
 		getWebElement(nameInputbox).click();
 		getWebElement(deleteNamebutton).click();
-		if(oldName.equals(getConfigValue("Name2"))) {
-			getWebElement(nameInputbox).sendKeys(getConfigValue("Name1"));
+		if (oldName.equals(name2)) {
+			getWebElement(nameInputbox).sendKeys(name1);
 		} else {
-			getWebElement(nameInputbox).sendKeys(getConfigValue("Name2"));
+			getWebElement(nameInputbox).sendKeys(name2);
 
 		}
+	}
+
+	public void clickOnNameSaveButton() {
 		clickOnSavebutton(nameSavebtn);
 	}
 
-	public void addDepartment() {
-		waitForElement(addDepartmentlinkbutton,30);
+	public void clickOnAddDepartmentlinkbutton() {
+		waitForElement(addDepartmentlinkbutton, 30);
 		getWebElement(addDepartmentlinkbutton).click();
-		waitForElement(departmentInputbox,30);
-		getWebElement(departmentInputbox).sendKeys(getConfigValue("newDepartment"));
+	}
+
+	public void enterDepartmentName(String departmentName) {
+		waitForElement(departmentInputbox, 30);
+		getWebElement(departmentInputbox).sendKeys(departmentName);
+	}
+
+	public void clickOnDepartmentSaveButton() {
 		clickOnSavebutton(departmentSavebtn);
 
 	}
 
-	public void updateDepartment() {
-		waitForElement(editDepartmentbutton,30);
+	public void clickEditDepartmentButton() {
+		waitForElement(editDepartmentbutton, 30);
 		getWebElement(editDepartmentbutton).click();
-		waitForElement(editDepartmentInputbox,30);
+	}
+
+	public void deleteDepartmentName() {
+		waitForElement(editDepartmentInputbox, 30);
 		getWebElement(editDepartmentInputbox).click();
-		waitForElement(deleteDepartmentbutton,30);
+		waitForElement(deleteDepartmentbutton, 30);
 		getWebElement(deleteDepartmentbutton).click();
-		getWebElement(editDepartmentInputbox).sendKeys(getConfigValue("updateDepartment"));
+
+	}
+
+	public void updateDepartmentName(String departmentName) {
+		getWebElement(editDepartmentInputbox).sendKeys(departmentName);
+	}
+
+	public void clickOnDepartmentSaveButton2() {
 		clickOnSavebutton(departmentSavebtn2);
 
 	}
 
-	public void deleteDepartment() {
-		waitForElement(editDepartmentbutton,30);
-		getWebElement(editDepartmentbutton).click();
-		waitForElement(editDepartmentInputbox,30);
-		getWebElement(editDepartmentInputbox).click();
-		waitForElement(deleteDepartmentbutton,30);
-		getWebElement(deleteDepartmentbutton).click();
-		clickOnSavebutton(departmentSavebtn2);
-
-	}
-
-	public void addPosition() {
-		waitForElement(addPositionOrTitlebutton,30);
+	public void clickOnaddPositionOrTitlebutton() {
+		waitForElement(addPositionOrTitlebutton, 30);
 		getWebElement(addPositionOrTitlebutton).click();
-		waitForElement(addPositionOrTitleInputbox,30);
-		getWebElement(addPositionOrTitleInputbox).sendKeys(getConfigValue("newPosition"));
+	}
+
+	public void enterPositiondetails(String position) {
+		waitForElement(addPositionOrTitleInputbox, 30);
+		getWebElement(addPositionOrTitleInputbox).sendKeys(position);
+	}
+
+	public void clickOnPositionSavebutton() {
 		clickOnSavebutton(positionSavebutton);
 	}
 
-	public void updatePosition() {
-		waitForElement(editPositionButton,30);
+	public void clickOnEditPositionButton() {
+		waitForElement(editPositionButton, 30);
 		getWebElement(editPositionButton).click();
-		waitForElement(editPositionOrTitleInputbox,30);
-		getWebElement(editPositionOrTitleInputbox).click();
-		waitForElement(deletePositionbutton,10);
-		getWebElement(deletePositionbutton).click();
-		waitForElement(editPositionOrTitleInputbox,30);
-		getWebElement(editPositionOrTitleInputbox).sendKeys(getConfigValue("updatePosition"));
-		clickOnSavebutton(positionSavebutton2);
-
 	}
 
 	public void deletePosition() {
-		waitForElement(editPositionButton,30);
+		waitForElement(editPositionOrTitleInputbox, 30);
+		getWebElement(editPositionOrTitleInputbox).click();
+		waitForElement(deletePositionbutton, 10);
+		getWebElement(deletePositionbutton).click();
+	}
+
+	public void updatePosition(String position) {
+
+		waitForElement(editPositionOrTitleInputbox, 30);
+		getWebElement(editPositionOrTitleInputbox).sendKeys(position);
+
+	}
+
+	public void clickOnPositionSavebutton2() {
+		clickOnSavebutton(positionSavebutton2);
+	}
+
+	public void deletePosition1() {
+		waitForElement(editPositionButton, 30);
 		getWebElement(editPositionButton).click();
-		waitForElement(editPositionOrTitleInputbox,30);
+		waitForElement(editPositionOrTitleInputbox, 30);
 		getWebElement(editPositionOrTitleInputbox).click();
 		getWebElement(deletePositionbutton).click();
 		clickOnSavebutton(positionSavebutton2);
 
 	}
 	
-	public void addLocation() {
-		waitForElement(addLocationbutton,30);
+	public void clickOnAddLocationbutton() {
+		waitForElement(addLocationbutton, 30);
 		getWebElement(addLocationbutton).click();
-		waitForElement(addLocationInputbox,30);
-		getWebElement(addLocationInputbox).sendKeys(getConfigValue("newLocation"));
+	}
+
+	public void enterLocation(String location) {
+		waitForElement(addLocationInputbox, 30);
+		getWebElement(addLocationInputbox).sendKeys(location);
+	}
+	public void clickOnLocationSavebutton() {
 		clickOnSavebutton(locationSavebutton);
 	}
+
 	public void updateLocation() {
-		
-		waitForElement(editLocationbutton,30);
+
+		waitForElement(editLocationbutton, 30);
 		getWebElement(editLocationbutton).click();
-		waitForElement(editLocationInputbox,30);
+		waitForElement(editLocationInputbox, 30);
 		getWebElement(editLocationInputbox).click();
 		getWebElement(deleteLocationbutton).click();
 		getWebElement(editLocationInputbox).sendKeys(getConfigValue("updateLocation"));
 		clickOnSavebutton(locationSavebutton2);
 
 	}
+
 	public void deleteLocation() {
-		waitForElement(editLocationbutton,30);
+		waitForElement(editLocationbutton, 30);
 		getWebElement(editLocationbutton).click();
-		waitForElement(editLocationInputbox,30);
+		waitForElement(editLocationInputbox, 30);
 		getWebElement(editLocationInputbox).click();
-		waitForElement(deleteLocationbutton,30);
+		waitForElement(deleteLocationbutton, 30);
 		getWebElement(deleteLocationbutton).click();
 		clickOnSavebutton(locationSavebutton2);
 
 	}
-	
+
 	public void addPhoneNumber() {
-		waitForElement(addPhoneNumber,30);
+		waitForElement(addPhoneNumber, 30);
 		getWebElement(addPhoneNumber).click();
-		waitForElement(countryCode,30);
+		waitForElement(countryCode, 30);
 		getWebElement(countryCode).click();
 		List<WebElement> allOptions = webdriver.findElements(By.xpath("//div[@role='option']"));
 		allOptions.get(94).click();
 		getWebElement(numberInput).sendKeys(getConfigValue("newPhoneNumber"));
-		waitForElement(numberSavebtn,30);
+		waitForElement(numberSavebtn, 30);
 		clickOnSavebutton(numberSavebtn);
-	
+
 	}
+
 	public void updatePhoneNumber() {
-		waitForElement(numberEditbutton,30);
+		waitForElement(numberEditbutton, 30);
 		scrollPage();
 		getWebElement(numberEditbutton).click();
-		waitForElement(numberInput,30);
+		waitForElement(numberInput, 30);
 		getWebElement(numberInput).click();
 //		List<WebElement> allOptions = webdriver.findElements(By.xpath("//div[@role='option']"));
 //		allOptions.get(94).click();
 		getWebElement(numberInput).click();
-		waitForElement(deletenumberbutton,30);
+		waitForElement(deletenumberbutton, 30);
 		getWebElement(deletenumberbutton).click();
 		getWebElement(numberInput).sendKeys(getConfigValue("updatePhoneNumber"));
 
 		clickOnSavebutton(numberSavebtn);
-	
+
 	}
+
 	public void deletePhoneNumber() {
-		waitForElement(numberEditbutton,30);
+		waitForElement(numberEditbutton, 30);
 		scrollPage();
 		getWebElement(numberEditbutton).click();
-		waitForElement(numberDelete,30);
+		waitForElement(numberDelete, 30);
 		getWebElement(numberDelete).click();
-		waitForElement(numberSavebtn2,30);
+		waitForElement(numberSavebtn2, 30);
 		clickOnSavebutton(numberSavebtn2);
 	}
-	
+
 	public void clickOnSavebutton(By elementName) {
-		waitForElement(elementName,30);
+		waitForElement(elementName, 30);
 		WebElement button = getWebElement(elementName);
-		JavascriptExecutor jse = (JavascriptExecutor)webdriver;
+		JavascriptExecutor jse = (JavascriptExecutor) webdriver;
 		jse.executeScript("arguments[0].click()", button);
 
-		
 	}
-	
+
 	public void scrollPage() {
 		JavascriptExecutor js = (JavascriptExecutor) webdriver;
 		js.executeScript("window.scrollBy(0,150)", "");
 	}
-	
 
 	public boolean validateMessage() {
 

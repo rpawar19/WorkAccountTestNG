@@ -2,12 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Smoke_Tests">
-<listeners>
-	<listener class-name="com.workaccounts.listener.listernersITest">
-	</listener>
-</listeners>
+	<listeners>
+		<listener class-name="com.workaccounts.listener.listernersITest"></listener>
+	</listeners>
 	<test name="SmokeTest">
 
+		<parameter name="name1" value="UserA" />
+		<parameter name="name2" value="UserB" />
+		<parameter name="departmentName1" value="IT" />
+		<parameter name="departmentName2" value="Non-IT" />
+		<parameter name="position1" value="Manager" />
+		<parameter name="position1" value="Director" />
+		<parameter name="location1" value="Ahmedabad" />
+		<parameter name="location2" value="Banglore" />
 		<!-- <groups>
 			<run>
 				<exclude name="Admin"></exclude>
@@ -16,10 +23,12 @@
 		</groups> -->
 
 		<classes>
-			<class name="com.workaccounts.web.PracticeTest" />
 			<!-- 
+			<class name="com.workaccounts.web.PracticeTest" />
+			-->
 			<class name="com.workaccounts.web.LoginTest" />
 			<class name="com.workaccounts.web.AccountDetailsTest" />
+			<!-- 			
 			<class name="com.workaccounts.web.ChangePasswordTest" />
 			-->
 		</classes>
