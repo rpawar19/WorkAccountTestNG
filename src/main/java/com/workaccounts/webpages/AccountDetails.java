@@ -161,17 +161,9 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 	public void clickOnLocationSavebutton() {
 		clickOnSavebutton(locationSavebutton);
 	}
-
-	public void updateLocation() {
-
+	public void clickOnEditLocationbutton() {
 		waitForElement(editLocationbutton, 30);
 		getWebElement(editLocationbutton).click();
-		waitForElement(editLocationInputbox, 30);
-		getWebElement(editLocationInputbox).click();
-		getWebElement(deleteLocationbutton).click();
-		getWebElement(editLocationInputbox).sendKeys(getConfigValue("updateLocation"));
-		clickOnSavebutton(locationSavebutton2);
-
 	}
 
 	public void deleteLocation() {
@@ -179,50 +171,59 @@ public class AccountDetails extends WorkAccountsBase implements AccountDetailsWO
 		getWebElement(editLocationbutton).click();
 		waitForElement(editLocationInputbox, 30);
 		getWebElement(editLocationInputbox).click();
-		waitForElement(deleteLocationbutton, 30);
 		getWebElement(deleteLocationbutton).click();
-		clickOnSavebutton(locationSavebutton2);
-
 	}
+	public void updateLocation(String location) {
+		getWebElement(editLocationInputbox).sendKeys(location);
+		
+		}
+	
+	public void clickOnLocationSavebutton2() {
+		clickOnSavebutton(locationSavebutton2);
+		}
 
-	public void addPhoneNumber() {
+	public void clickOnAddPhoneNumber() {
 		waitForElement(addPhoneNumber, 30);
 		getWebElement(addPhoneNumber).click();
+	}
+	public void addCountryCode(int code) {
 		waitForElement(countryCode, 30);
 		getWebElement(countryCode).click();
 		List<WebElement> allOptions = webdriver.findElements(By.xpath("//div[@role='option']"));
-		allOptions.get(94).click();
-		getWebElement(numberInput).sendKeys(getConfigValue("newPhoneNumber"));
+		allOptions.get(code).click();
+	}
+	public void enterPhoneNumber(String phoneNumber) {
+		
+		getWebElement(numberInput).sendKeys(phoneNumber);
+	}
+	public void clickOnSavePhoneNumberButton() {		
 		waitForElement(numberSavebtn, 30);
 		clickOnSavebutton(numberSavebtn);
 
 	}
-
-	public void updatePhoneNumber() {
+	public void clickOnEditPhoneNumberButton() {
 		waitForElement(numberEditbutton, 30);
 		scrollPage();
 		getWebElement(numberEditbutton).click();
-		waitForElement(numberInput, 30);
-		getWebElement(numberInput).click();
-//		List<WebElement> allOptions = webdriver.findElements(By.xpath("//div[@role='option']"));
-//		allOptions.get(94).click();
-		getWebElement(numberInput).click();
-		waitForElement(deletenumberbutton, 30);
-		getWebElement(deletenumberbutton).click();
-		getWebElement(numberInput).sendKeys(getConfigValue("updatePhoneNumber"));
-
-		clickOnSavebutton(numberSavebtn);
-
 	}
 
-	public void deletePhoneNumber() {
-		waitForElement(numberEditbutton, 30);
-		scrollPage();
-		getWebElement(numberEditbutton).click();
-		waitForElement(numberDelete, 30);
-		getWebElement(numberDelete).click();
+	public void deleteEnteredPhoneNumber() {
+		
+		waitForElement(deletenumberbutton, 30);
+		getWebElement(deletenumberbutton).click();
+	}
+	
+	public void clickOnSavePhoneNumberButton2() {		
 		waitForElement(numberSavebtn2, 30);
 		clickOnSavebutton(numberSavebtn2);
+
+	}
+	
+
+	public void deletePhoneNumber() {
+		waitForElement(numberDelete, 30);
+		getWebElement(numberDelete).click();
+		
 	}
 
 	public void clickOnSavebutton(By elementName) {

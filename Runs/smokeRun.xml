@@ -15,6 +15,11 @@
 		<parameter name="position1" value="Director" />
 		<parameter name="location1" value="Ahmedabad" />
 		<parameter name="location2" value="Banglore" />
+		<parameter name="phonenumber1" value="9998998899" />
+		<parameter name="phonenumber2" value="9995656558" />
+		<parameter name="code1" value="94" />
+		<parameter name="code2" value="95" />
+		
 		<!-- <groups>
 			<run>
 				<exclude name="Admin"></exclude>

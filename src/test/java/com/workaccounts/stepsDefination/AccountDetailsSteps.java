@@ -49,14 +49,41 @@ public class AccountDetailsSteps extends WorkAccountsBase{
 		ad.clickOnLocationSavebutton();
 		
 	}
+	public void updateLocation(String location) {
+		ad.clickOnEditLocationbutton();
+		ad.deleteLocation();
+		ad.updateLocation(location);
+		ad.clickOnLocationSavebutton2();		
+	}
+	public void deleteLocation() {
+		ad.clickOnEditLocationbutton();
+		ad.deleteLocation();
+		ad.clickOnLocationSavebutton2();		
+	}
+	public void addPhoneNumber(String phoneNumber, int code) {
+		ad.clickOnAddPhoneNumber();
+		ad.addCountryCode(code);
+		ad.enterPhoneNumber(phoneNumber);
+		ad.clickOnSavePhoneNumberButton();
+	
+	}
+	public void updatePhoneNumber(String phoneNumber, int code) {
+		ad.clickOnEditPhoneNumberButton();
+		ad.addCountryCode(code);
+		ad.deleteEnteredPhoneNumber();
+		ad.enterPhoneNumber(phoneNumber);
+		ad.clickOnSavePhoneNumberButton();
+	
+	}
+	public void deletePhoneNumber() {
+		ad.clickOnEditPhoneNumberButton();
+		ad.deletePhoneNumber();
+		ad.clickOnSavePhoneNumberButton2();
+	}
 	
 //	public void validateUpdateProfile() {
 //		//ad.addUpdateProfilePicture();
-//		ad.updateLocation();
-//		ad.deleteLocation();
-//		ad.addPhoneNumber();
-//		ad.updatePhoneNumber();
-//		ad.deletePhoneNumber();
+
 //	}
 
 }

@@ -75,3 +75,12 @@
 2022-07-19 23:22:00,878 INFO c.w.l.listernersITest [main] Method loginWithNonAdminUseris Passed
 2022-07-19 23:22:00,895 INFO c.w.l.listernersITest [main] Method updateProfileis started
 2022-07-19 23:22:17,133 INFO c.w.l.listernersITest [main] Method updateProfileis Passed
+2022-07-21 19:36:00,065 INFO c.w.l.listernersITest [main] Method loginWithNonAdminUseris started
+2022-07-21 19:36:11,803 INFO c.w.l.listernersITest [main] Method loginWithNonAdminUseris Passed
+2022-07-21 19:36:11,833 INFO c.w.l.listernersITest [main] Method updateProfileis Failed
+2022-07-21 19:37:46,047 INFO c.w.l.listernersITest [main] Method loginWithNonAdminUseris started
+2022-07-21 19:37:58,598 INFO c.w.l.listernersITest [main] Method loginWithNonAdminUseris Passed
+2022-07-21 19:37:58,619 INFO c.w.l.listernersITest [main] Method updateProfileis Failed
+2022-07-21 19:38:50,551 INFO c.w.l.listernersITest [main] Method loginWithNonAdminUseris started
+2022-07-21 19:39:00,074 INFO c.w.l.listernersITest [main] Method loginWithNonAdminUseris Passed
+2022-07-21 19:39:00,088 INFO c.w.l.listernersITest [main] Method updateProfileis Failed
